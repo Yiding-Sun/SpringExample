@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Cal</title>
+</head>
+<body>
+<h1>hello</h1>
+<form method="post" th:object="${calForm}" th:action="@{/cal}">
+    <input type="number"  th:field="*{first}"/><br/>
+    <input type="radio" th:field="*{method}" value="+"/>+<br/>
+    <input type="radio" th:field="*{method}" value="-"/>-<br/>
+    <input type="radio" th:field="*{method}" value="*"/>*<br/>
+    <input type="radio" th:field="*{method}" value="/"/>/<br/>
+    <input type="number" th:field="*{second}"/><br/>
+    <input type="submit" th:value="submit"/>
+</form>
+</body>
+</html>

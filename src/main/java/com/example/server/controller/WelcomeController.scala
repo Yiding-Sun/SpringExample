@@ -1,9 +1,8 @@
-package com.example.server
+package com.example.server.controller
 
 import org.slf4j.{Logger, LoggerFactory}
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.{RequestMapping, ResponseBody}
+import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 class WelcomeController {
