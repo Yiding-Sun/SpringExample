@@ -17,7 +17,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	override def configure(http: HttpSecurity): Unit = {
 		http.authorizeRequests
-				.anyRequest.permitAll()
+				.anyRequest.authenticated()
 				.and
 				.formLogin
         		.and
