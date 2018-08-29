@@ -22,5 +22,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin
         		.and
         		.httpBasic
+        		.and
+        		.rememberMe.tokenValiditySeconds(900)
 	}
 }
