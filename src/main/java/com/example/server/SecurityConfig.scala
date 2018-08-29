@@ -16,10 +16,15 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	override def configure(http: HttpSecurity): Unit = {
-		http.authorizeRequests
+<<<<<<< HEAD
+		http .authorizeRequests
 				.anyRequest.authenticated()
+=======
+		http.authorizeRequests
+				.anyRequest.permitAll()
+>>>>>>> parent of dc1c8b2... needs permition
 				.and
-				.formLogin
+				.formLogin.loginPage("/login").permitAll().defaultSuccessUrl("/index")
         		.and
         		.httpBasic
         		.and
