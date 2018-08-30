@@ -7,9 +7,17 @@
 <body>
 <h1>Login</h1>
 <form th:action="@{/login}" method="post">
-    <label><b>用户名</b></label><input type="text" name="username"/><br/>
-    <label><b>密码</b></label><input type="password" name="password"/><br/>
-    <input type="checkbox" name="remember-me"/><label>在这台电脑上记住我</label><br/>
+    <table border="1">
+        <tr>
+            <th><label><b>用户名</b></label></th>
+            <th><input type="text" name="username"/></th>
+        </tr>
+        <tr>
+            <th><label><b>密码</b></label></th>
+            <th><input type="password" name="password"/></th>
+        </tr>
+    </table>
+    <input type="checkbox" name="remember-me" id="remember_me"/><label>在这台电脑上记住我</label><br/>
     <input type="submit" name="login">
 </form>
 </body>

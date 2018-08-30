@@ -1,14 +1,13 @@
 package com.example.server.controller
 
-import org.slf4j.LoggerFactory
-import org.springframework.web.bind.annotation.{RequestMapping, ResponseBody}
+import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.RequestMapping
 
+@Controller
 class LoginController {
 	
 	@RequestMapping(Array("/login"))
-	def login = {
-		LoggerFactory.getLogger(getClass).info("login")
-		"login"
-	}
+	def login = "login"
+	
 	
 }
