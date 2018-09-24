@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>database</title>
+</head>
+<body>
+<h1>Database Operating</h1>
+<div>
+    <h2>SELECT</h2>
+    <form method="post" th:action="@{/jdbc/select}" th:object="${selectForm}">
+        name:<input type="text" th:field="*{name}"/>
+        <input type="submit"/>
+    </form>
+</div>
+<div>
+    <h2>INSERT</h2>
+    <form method="post" th:action="@{/jdbc/insert}" th:object="${insertForm}">
+        name:<input type="text" th:field="*{name}"/>
+        describe:<input type="text" th:field="*{describe}"/>
+        <input type="submit"/>
+    </form>
+</div>
+</body>
+</html>

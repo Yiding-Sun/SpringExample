@@ -1,16 +1,15 @@
 package com.example.server
 
-import org.springframework.boot.SpringBootConfiguration
+import javax.sql.DataSource
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
 import org.springframework.context.annotation.{Bean, Configuration}
-import org.springframework.web.servlet.ViewResolver
-import org.thymeleaf.TemplateEngine
-import org.thymeleaf.spring5.SpringTemplateEngine
-import org.thymeleaf.spring5.view.ThymeleafViewResolver
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
+import org.springframework.jdbc.core.JdbcTemplate
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver
+
 @Configuration
-@SpringBootConfiguration
-class Configure extends WebMvcAutoConfiguration{
+@EnableJpaRepositories
+class Configure extends WebMvcAutoConfiguration {
 	/*def viewResolver: ViewResolver = {
 		log.info("viewResolver")
 		val viewResolver = new ThymeleafViewResolver()
@@ -35,4 +34,21 @@ class Configure extends WebMvcAutoConfiguration{
 		templateResolver.setTemplateMode("HTML5")
 		templateResolver
 	}*/
+	
+	/*@Bean
+	def dataSource: EmbeddedDatabase = new EmbeddedDatabaseBuilder()
+			.setType(EmbeddedDatabaseType.H2)
+        	.addScript("classpath:schema.sql")
+        	.addScript("classpath:data.sql")
+			.build()*/
+	/*def dataSource={
+		val dataSource=new SimpleDriverDataSource()
+		dataSource.setDriverClass(classOf[org.h2.Driver])
+		dataSource.setUrl("jdbc:h2:mem:test;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE")
+		dataSource.setUsername("sa")
+		dataSource.setPassword("")
+	}*/
+	
+	@Bean
+	def jdbcTemplate(dataSource:DataSource)=new JdbcTemplate(dataSource)
 }

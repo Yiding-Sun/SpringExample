@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>database_show</title>
+</head>
+<body>
+<h1>database show</h1>
+<div th:object="${thingForm}">
+    id:<label th:text="*{id}"></label>
+    name:<label th:text="*{name}"></label>
+    describe:<label th:text="*{describe}"></label>
+</div>
+</body>
+</html>

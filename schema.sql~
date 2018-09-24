@@ -1,0 +1,6 @@
+-- this is only a schema
+
+CREATE TABLE mytable IF NOT EXISTS{
+       `id`    INT     NOT NULL AUTO_INCREMENT,
+       `name`  char(20) NOT NULL,
+      }
