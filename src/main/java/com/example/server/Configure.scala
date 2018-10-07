@@ -3,12 +3,10 @@ package com.example.server
 import javax.sql.DataSource
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
 import org.springframework.context.annotation.{Bean, Configuration}
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.jdbc.core.JdbcTemplate
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver
 
 @Configuration
-@EnableJpaRepositories
 class Configure extends WebMvcAutoConfiguration {
 	/*def viewResolver: ViewResolver = {
 		log.info("viewResolver")
@@ -49,6 +47,6 @@ class Configure extends WebMvcAutoConfiguration {
 		dataSource.setPassword("")
 	}*/
 	
-	@Bean
-	def jdbcTemplate(dataSource:DataSource)=new JdbcTemplate(dataSource)
+	//@Bean
+	//def jdbcTemplate(dataSource:DataSource)=new JdbcTemplate(dataSource)
 }
